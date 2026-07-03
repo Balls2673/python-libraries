@@ -75,5 +75,31 @@ adults = np.where(ages >= 18, ages, -1)
 print(adults)
 
 #random number
-rng = np.random.default_rng(1)
+rng = np.random.default_rng()
 print(rng.integers(1,7,(3,2)))
+print(np.random.uniform(-1,1))
+Rarray = np.array([1,2,3,4,5])
+rng.shuffle(Rarray)
+print(Rarray)
+fruits = np.array(["apple","green apple","tommato","beans"])
+fruit = rng.choice(fruits)
+print(fruit)
+
+
+#just exerciecing 
+Earray=np.array([1,2,3,4,5,6,7,8,9,10])
+print(Earray[4])
+onlyfiveoropove = np.where(Earray < 5, Earray, 0)
+rng = np.random.default_rng()
+print(rng.integers(1,100,10))
+print(np.min(Earray))
+print(np.max(Earray))
+print(np.std(Earray))
+print(np.mean(Earray))
+print(np.sum(Earray))
+
+Aarray = np.array([[ 1,  2,  3],[ 4 , 5 , 6],[ 7 , 8,  9]])
+
+print(Aarray[1])
+print(Aarray[:,2])
+print(np.where(Aarray > 5, Aarray,999))
