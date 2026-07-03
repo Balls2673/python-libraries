@@ -61,4 +61,19 @@ arrayb2=np.array([[1],[2],[3],[4]])
 print(arrayb1.shape)
 print(arrayb2.shape)
 print(arrayb1*arrayb2) 
-print("dog")
+
+#agreegate function
+agreearray = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print(np.mean(agreearray))
+print(np.sum(agreearray))
+print(np.std(agreearray))
+print(np.sum(agreearray, axis=1))
+
+#filtering
+ages = np.array([[23,43,65,23,15,13],[23,43,56,45,43,12]])
+adults = np.where(ages >= 18, ages, -1)
+print(adults)
+
+#random number
+rng = np.random.default_rng(1)
+print(rng.integers(1,7,(3,2)))
