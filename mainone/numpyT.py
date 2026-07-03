@@ -53,3 +53,12 @@ print(array1 + array2)
 scores = np.array([23,55,75,36,46,97,86,100])
 scores[scores < 50] = 0
 print(scores)
+
+#broadcasting
+
+arrayb1 = np.array([[1,2,3,4]])
+arrayb2=np.array([[1],[2],[3],[4]])
+print(arrayb1.shape)
+print(arrayb2.shape)
+print(arrayb1*arrayb2) 
+print("dog")
