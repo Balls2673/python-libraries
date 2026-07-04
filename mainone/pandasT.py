@@ -26,6 +26,7 @@ for i in range(len(employee["Names"])): employee["Ages"].append(rng.integers(18,
 numemp= []
 for i in range(len(employee["Names"])): numemp.append(f"Employee{i+1}")
 df = pd.DataFrame(employee, index=numemp)
+df["job"] = ["cooker","cleaner","server","casher"]
 print(df)
 
 
