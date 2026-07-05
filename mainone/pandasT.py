@@ -47,13 +47,21 @@ print(dcf.loc["Bulbasaur":"Caterpie", ["Height", "Weight"]])
 
 print(dfc.iloc[0:11, 0:4])
 
-popokemon = input("enter a pokemon name: ")
+# popokemon = input("enter a pokemon name: ")
 
-try:
- print( dcf.loc[popokemon])
+# try:
+#  print( dcf.loc[popokemon])
 
-except KeyError:
- print(f"{popokemon} not found")
+# except KeyError:
+#  print(f"{popokemon} not found")
+
+
+# filtering
+
+tall_pokemon = dfc[dfc["Weight"] >= 120]
+Tyoe_pokemon = dfc[(dfc["Type2"] == "Rock")]
+print(tall_pokemon)
+print(Tyoe_pokemon)
 
 
 
