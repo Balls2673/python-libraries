@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os 
 
 print(pd.__version__)
 
@@ -29,7 +30,31 @@ df = pd.DataFrame(employee, index=numemp)
 #add column
 df["job"] = ["cooker","cleaner","server","casher"]
 #new row
-new_row = pd.DataFrame([{"name": "zucherburg", "job": "a femboy dump cum"}])
-print(df)
+new_row = pd.DataFrame([{"Names": "zucherburg", "job": "Nicker"}])
+DF = pd.concat([df, new_row])
+print(DF)
+
+
+#importing
+
+dfc = pd.read_csv("mainone/data.csv")
+#print(dfc[["Weight", "Type1"]].to_string())
+
+#selection
+
+dcf = pd.read_csv("mainone/data.csv", index_col="Name" )
+print(dcf.loc["Bulbasaur":"Caterpie", ["Height", "Weight"]])
+
+print(dfc.iloc[0:11, 0:4])
+
+popokemon = input("enter a pokemon name: ")
+
+try:
+ print( dcf.loc[popokemon])
+
+except KeyError:
+ print(f"{popokemon} not found")
+
+
 
 
