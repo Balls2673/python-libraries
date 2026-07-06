@@ -64,5 +64,18 @@ print(tall_pokemon)
 print(Tyoe_pokemon)
 
 
+#aggregation
+
+print(dfc.mean(numeric_only=True))
+print(dfc.sum(numeric_only=True))
+print(dfc.std(numeric_only=True))
+print(dfc.sum(numeric_only=True))
+print(dfc.count())
+print(dfc["Weight"].mean())
+
+group = dfc.groupby("Type1")
+print(group["Weight"].mean())
+
+
 
 
