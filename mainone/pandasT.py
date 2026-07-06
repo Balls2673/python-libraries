@@ -76,6 +76,14 @@ print(dfc["Weight"].mean())
 group = dfc.groupby("Type1")
 print(group["Weight"].mean())
 
+#data cleaning
+
+#dfcg = dfc.drop(columns=["Type1","No"])
+dfcg = dfc.fillna({"Type2": "There is nothing"})
+countable = (dfcg["Type2"] == "There is nothing").sum()
+dfcg["Height"] = dfcg["Height"].replace(1.0, 200)
+print(f"{countable} here is your count lil nigga")
+print(dfcg.to_string())
 
 
 
