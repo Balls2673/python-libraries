@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-EmployeeData = [{
+EmployeeData = {
     "Names": [
         "Oliver", "Emma", "Liam", "Olivia", "Noah", "Ava", "Ethan", "Sophia", "Lucas", "Mia",
         "Mason", "Isabella", "Logan", "Charlotte", "Amelia", "Harper", "Evelyn", "Abigail", "Emily", "Elizabeth",
@@ -14,20 +14,20 @@ EmployeeData = [{
     "Department": [], 
     "Salary": [], 
     "Experience": []
-}]
+}
 
 
+depermantes = ["Cooker","CLearner","Technetion", "Bodyguard" ,"Random Worker"]
+Lenghts = len(EmployeeData["Names"])
 rng = np.random.default_rng()
-for i in range(len(EmployeeData["Names"])):
-	EmployeeData["Ages"].append(rng.integers(20,61))
-for i in range(len(EmployeeData["Names"])):
-	EmployeeData["Names"].append(rng.integers(500,5001))
-
-for i in range(len(EmployeeData["Names"])):
-	EmployeeData["Names"].append(rng.integers(0,36))
+for i in range(Lenghts):
+    EmployeeData["Ages"].append(rng.integers(20,61))
+    EmployeeData["Salary"].append(rng.integers(500,5001))
+    EmployeeData["Experience"].append(rng.integers(0,36))
+    EmployeeData["Department"].append(rng.choice(depermantes))
 	
 Enumper = []
-for i in range(len(EmployeeData["Names"])):
-	Enumper.append(rng.integers(i + 1))
-DF = pd.DataFrame(EmployeeData,index=Enumper)
+for i in range(Lenghts):
+	Enumper.append(i + 1)
+DF = pd.DataFrame(EmployeeData, Enumper)
 print(DF)
