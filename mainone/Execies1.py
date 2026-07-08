@@ -17,6 +17,8 @@ EmployeeData = {
 }
 
 
+
+
 depermantes = ["Cooker","CLearner","Technetion", "Bodyguard" ,"Random Worker"]
 Lenghts = len(EmployeeData["Names"])
 rng = np.random.default_rng()
@@ -25,9 +27,16 @@ for i in range(Lenghts):
     EmployeeData["Salary"].append(rng.integers(500,5001))
     EmployeeData["Experience"].append(rng.integers(0,36))
     EmployeeData["Department"].append(rng.choice(depermantes))
+
+
 	
 Enumper = []
 for i in range(Lenghts):
 	Enumper.append(i + 1)
 DF = pd.DataFrame(EmployeeData, Enumper)
+DF.loc[DF["Salary"] < 1000, "Salary"] = 1000
+DF["Tax"] = "10%"
+DF["Net Salary"] = DF["Salary"] - (DF["Salary"] * 10/100)
+DFC = DF.loc[(DF["Ages"] > 40) & (DF["Salary"] > 3000)]
 print(DF)
+print(DFC)
