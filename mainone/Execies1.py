@@ -37,6 +37,18 @@ DF = pd.DataFrame(EmployeeData, Enumper)
 DF.loc[DF["Salary"] < 1000, "Salary"] = 1000
 DF["Tax"] = "10%"
 DF["Net Salary"] = DF["Salary"] - (DF["Salary"] * 10/100)
+DF = DF.sort_values(by="Salary", ascending =False)
 DFC = DF.loc[(DF["Ages"] > 40) & (DF["Salary"] > 3000)]
+print(np.mean(DF["Salary"]))
+print(np.max(DF["Salary"]))
+print(np.min(DF["Salary"]))
+print(DF["Department"].value_counts())
+
 print(DF)
+print(DFC)
+DF.to_csv("Employee Data.csv" , index=False)
+
+
+New_Row = pd.DataFrame([{"Names": "Greg","Ages": 23, "Department":"CLearner",    "Salary":2000, "Experience":6 }])
+DFC = pd.concat([DF,New_Row])
 print(DFC)
