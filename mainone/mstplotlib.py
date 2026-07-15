@@ -37,28 +37,29 @@ import matplotlib.pyplot as plt
 
 
 #BarChart
+ 
+population  = 8303804326
 
-# population  = 8303804326
+precenteges = {"Adult":  0.45,"Chaildren": 0.25, "Teeens": 0.15, "Elder": 0.15}
 
-# precenteges = {"Adult":  0.45,"Chaildren": 0.25, "Teeens": 0.15, "Elder": 0.15}
+result  = {}
 
-# result  = {}
+for key , value in precenteges.items():
+     result[key] = int(population * value)
 
-# for key , value in precenteges.items():
-#     result[key] = int(population * value)
-
-# Keys = np.array(list(result.keys()))
-# Values = np.array(list(result.values()))
-# plt.title("Human Precentege")
-# plt.bar(Keys,Values)
+Keys = np.array(list(result.keys()))
+Values = np.array(list(result.values()))
+plt.title("Human Precentege")
+plt.bar(Keys,Values)
 # #plt.pie(Values, labels=Keys, autopct="%1.1f%%", explode=[0.07,0,0,0],shadow=True)
-# plt.show()
+plt.show()
 # print(Values)
 
 
 #PieChart
 
 
+#subplots 
 
 
 
