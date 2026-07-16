@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd 
-import matplotlib as pt
+import matplotlib.pyplot as plt
 
 
 
@@ -39,3 +39,6 @@ for i in range(Lenghts):
 	Enumper.append(i + 1)
 DF = pd.DataFrame(EmployeeData, Enumper)
 DF.loc[DF["Salary"] < 1000, "Salary"] = 1000
+top10 = DF.sort_values(by = "Salary", ascending=False).head(10)
+plt.bar(top10["Names"],top10["Salary"])
+plt.show()
