@@ -40,5 +40,12 @@ for i in range(Lenghts):
 DF = pd.DataFrame(EmployeeData, Enumper)
 DF.loc[DF["Salary"] < 1000, "Salary"] = 1000
 top10 = DF.sort_values(by = "Salary", ascending=False).head(10)
-plt.bar(top10["Names"],top10["Salary"])
+
+
+
+fig , ax = plt.subplots()
+bars = ax.bar(top10["Names"], top10["Salary"])
+ax.bar_label(bars) 
+
+
 plt.show()
